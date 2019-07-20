@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     if User.find_by_username(params[:username]) == nil
       user = User.new(params)
       user.save
+      redirect '/tweets'
     if logged_in?
       redirect '/tweets'
     else

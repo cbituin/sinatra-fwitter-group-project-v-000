@@ -45,14 +45,14 @@ class UsersController < ApplicationController
       redirect to "/"
     end
   end
-
-  post "/logout" do
-   session.clear
-    if logged_in?
-       redirect to "/tweets"
-     else
-       redirect to "/login"
-     end
-   end
+  # 
+  # post "/logout" do
+  #  session.clear
+  #   if logged_in?
+  #      redirect to "/tweets"
+  #    else
+  #      redirect to "/login"
+  #    end
+  #  end
 
 end

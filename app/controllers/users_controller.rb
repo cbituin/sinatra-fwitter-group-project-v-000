@@ -38,13 +38,17 @@ class UsersController < ApplicationController
   end
 
   get "/logout" do
-  erb :"/users/logout"
-  #  session.clear
-  # if logged_in?
-  #    redirect to "/tweets"
-  #  else
-  #    redirect to "/login"
-  #  end
+    erb :"/users/logout"
+  end
+
+  post "/logout" do
+     session.clear
+    if logged_in?
+       redirect to "/tweets"
+     else
+       redirect to "/login"
+     end
+   end
   end
 
 end

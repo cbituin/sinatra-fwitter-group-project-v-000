@@ -14,14 +14,11 @@ class UsersController < ApplicationController
       user = User.new(params)
       user.save
     else
-      redirect to "/login"
-    end
-
-    if user.save
-      redirect '/tweets'
-    else
-      redirect '/signup'
-    end
+      if user.save
+        redirect '/tweets'
+      else
+        redirect '/signup'
+      end
   end
 
   get "/login" do

@@ -42,7 +42,7 @@ class UsersController < ApplicationController
       session.destroy
       redirect to "/login"
     else
-      erb :"/users/logout"
+      redirect to "/"
     end
   end
 

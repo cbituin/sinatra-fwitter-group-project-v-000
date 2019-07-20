@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   end
 
   post "/logout" do
-     session.clear
+   session.clear
     if logged_in?
        redirect to "/tweets"
      else

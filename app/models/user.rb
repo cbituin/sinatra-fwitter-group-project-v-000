@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_many :tweets
 
   def self.find_by_username(username)
-    Self.all.select do |user|
+    self.all.select do |user|
       user.username == username
     end
   end

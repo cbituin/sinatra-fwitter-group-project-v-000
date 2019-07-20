@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :tweets
 
-  def find_by_username(username)
+  def self.find_by_username(username)
     Self.all.select do |user|
       user.username == username
     end

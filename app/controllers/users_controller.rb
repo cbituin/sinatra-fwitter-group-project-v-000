@@ -46,7 +46,8 @@ class UsersController < ApplicationController
     end
   end
   #
-  # post "/logout" do
+  #  POST route created for default "logout" view previously created
+  #  post "/logout" do
   #  session.clear
   #   if logged_in?
   #      redirect to "/tweets"

@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       user = User.new(params)
       user.save
     else
-      user = User.find_by_username(params[:username])
+      redirect to "/login"
     end
 
     if user.save

@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   get '/signup' do
     @user = User.find_by(params)
-    if @user != current_user
+    if @user != current_user || !current_user
      erb :"/users/create_user"
     else
       redirect to '/tweets'

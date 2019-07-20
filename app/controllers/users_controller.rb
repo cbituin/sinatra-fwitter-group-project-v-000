@@ -38,7 +38,11 @@ class UsersController < ApplicationController
   end
 
   get "/logout" do
-    erb :"/users/logout"
+    if logged_in?
+      erb :"/users/logout"
+    else
+      redirect to "/login"
+    end
   end
 
   post "/logout" do

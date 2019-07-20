@@ -10,16 +10,15 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    if User.find_by_username(params[:username]) == nil
-      user = User.new(params)
-      user.save
+    user = User.new(params)
+    user.save
+    if user.save
       redirect '/tweets'
-    elsif User.find_by_username(params[:username]) != nil
-      redirect '/login'
     else
       redirect '/signup'
     end
   end
+
 
   get "/login" do
     if logged_in?

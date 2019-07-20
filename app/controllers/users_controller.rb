@@ -10,7 +10,8 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    user = User.new(params)
+    binding.pry
+    user = User.new(params) if User.find(params) ==nil
     user.save
     if user.save
       redirect '/tweets'

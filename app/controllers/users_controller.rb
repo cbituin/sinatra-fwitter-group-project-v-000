@@ -10,7 +10,6 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    binding.pry
     user = User.new(params) if User.find_by_username(params[:username]) == nil
     user.save
     if user.save

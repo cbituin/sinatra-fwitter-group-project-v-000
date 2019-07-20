@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   get '/signup' do
-    @user = User.find_by(params)
+    # @user = User.find_by(params)
     if !logged_in?
      erb :"/users/create_user"
     else

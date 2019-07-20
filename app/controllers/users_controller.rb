@@ -38,6 +38,7 @@ class UsersController < ApplicationController
   end
 
   get "/logout" do
+    binding.pry
     if logged_in?
       erb :"/users/logout"
     else

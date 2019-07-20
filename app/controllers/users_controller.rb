@@ -14,8 +14,8 @@ class UsersController < ApplicationController
       user = User.new(params)
       user.save
       redirect '/tweets'
-    elsif logged_in?
-      redirect '/tweets'
+    elsif User.find_by_username(params[:username]) != nil
+      redirect '/login'
     else
       redirect '/signup'
     end
